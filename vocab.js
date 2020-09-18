@@ -56,6 +56,8 @@ function speakId(title) {
             synth.speak(toSpeak);
 }
 
+
+
 //filter the unwiped item:
 let say = "nothing to say";
 let newArr = [];
@@ -90,6 +92,7 @@ const fill = document.getElementById('fill');
 const btnNext = document.getElementById('btnNext');
 const status = document.getElementById('status');
 const hint = document.getElementById('hint');
+const confirm = document.getElementById('confirm');
 
 fill.addEventListener("keypress", handleAnswer);
 
@@ -113,12 +116,13 @@ function checkResult(result) {
 function setSuccessFor(input) {
 	const formControl = input.parentNode;
 	formControl.className = "form-control success";
+	speakId(`oh yes ${say} `)
 }
 
 function setErrorFor(input) {
 	const formControl = input.parentNode;
     formControl.className = "form-control error";
-   
+    speakId(`no no not ${fill.value}`)
 }
 
 
@@ -134,7 +138,7 @@ function handleNext() {
 }
 
 function getHint(word){
-	return hint.innerText = `Gợi ý: ${word}`;
+	return hint.innerText = `"${word}"`;
 }
 
 window.addEventListener('load', () => {
@@ -221,7 +225,7 @@ function addTodo(obj) {
                      <p class="text ${obj.textStatus}">${obj.title}</p>
                      <p class="${obj.doneStatus}"><i class="fas fa-volume-up" job="complete" id="${obj.id}"></i></p>
                      <i class="fas fa-trash-alt erase ${obj.eraseStatus}" job="delete" id="${obj.id}"></i>  
-                     <p>${obj.meaning}</p>
+                     <p class="meaning">${obj.meaning}</p>
                		</li>`;
 		list.insertAdjacentHTML(position, item);
 		localStorage.setItem("main", JSON.stringify(ul));

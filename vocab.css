@@ -31,6 +31,17 @@ a {
 	align-content: center;
 }
 
+.first {
+	display: grid;
+	justify-content: center;
+	padding: 20px 0 20px 0;
+	border-bottom: 1px dotted black;
+}
+
+.first button {
+	padding: 10px;
+
+}
 
 
 .form-control {
@@ -42,7 +53,7 @@ a {
 }
 
 .form-control i {
-	flex: 3;
+	flex: 2;
 	font-size: 2.5em;
 }
 
@@ -71,17 +82,19 @@ a {
 	border-color: #e74c3c;
 }
 
-.nextContainer {
-	display: flex;
-	
-}
 
-.nextContainer button {
-	float: right;
+.second {
+	display: grid;
 }
 
 
 
+.addToList {
+	display: grid;
+	justify-content: center;
+	justify-items: center;
+
+}
 
 
 .content {
@@ -96,6 +109,10 @@ a {
 	align-content: center;
 	grid-gap: 15px;
 	padding-bottom: 20px;
-	font-size: 1.5em;
+	grid-row-gap:	0px;
+	font-size: 1.2em;
 }
 
+.item .meaning {
+	font-size: 0.6em;
+} 
