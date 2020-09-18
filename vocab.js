@@ -74,11 +74,8 @@ function ulList(arr) {
 			newArr = [];
 		}
 	 say = unwipedList[random].title;
-	 firstLetter = unwipedList[random].title[0];
-	 lastLetter = unwipedList[random].title[say.length - 1];
-	 let hint = `[ ${firstLetter}...${lastLetter} ]`;
-	 console.log(lastLetter);
-	getHint(hint);
+	 
+	getHint(unwipedList[random].meaning);
 }
 
 function randomGenerator(arr) {
@@ -118,7 +115,7 @@ function handleNext() {
 }
 
 function getHint(word){
-	return hint.innerText = `Hint: ${word}`;
+	return hint.innerText = `Gợi ý: ${word}`;
 }
 
 window.addEventListener('load', () => {
@@ -132,6 +129,7 @@ const clear = document.getElementById("clear");
 const dateElement = document.getElementById("date");
 const list = document.getElementById("list");
 const input = document.getElementById("input");
+const input2 = document.getElementById("input2");
 const plus = document.getElementById("plus");
 
 //submitting a new item by clicking the plus icon:
@@ -161,8 +159,11 @@ input.addEventListener("keyup", newTodo);
 
 //set up object item and push it in ul array and display function (addTodo):
 function newTodo(event) {
+	let meaning = input2.value;
+	
 	let li = {
 		title: "",
+		meaning: meaning,
 		trash: false,
 		done: false,
 		id: ul.length	
@@ -197,10 +198,12 @@ function addTodo(obj) {
                      <p class="text ${obj.textStatus}">${obj.title}</p>
                      <p class="${obj.doneStatus}"><i class="fas fa-volume-up" job="complete" id="${obj.id}"></i></p>
                      <i class="fas fa-trash-alt erase ${obj.eraseStatus}" job="delete" id="${obj.id}"></i>  
-                </li>`;
+                     <p>${obj.meaning}</p>
+               		</li>`;
 		list.insertAdjacentHTML(position, item);
 		localStorage.setItem("main", JSON.stringify(ul));
 		input.value = "";
+		input2.value="";
 	} else {
 		return "";
 	}
