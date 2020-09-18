@@ -11,20 +11,20 @@ if(speechSynthesis !== undefined){
 
 function PopulateVoices(){
             voices = synth.getVoices();
-          //  var selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
-            //voiceList.innerHTML = '';
+            let selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
+            voiceList.innerHTML = '';
             
             voices.forEach((voice)=>{
                 let listItem = document.createElement('option');
                 listItem.textContent = voice.name;
-               
-               // listItem.setAttribute('data-lang', voice.lang);
+                
+               listItem.setAttribute('data-lang', voice.lang);
                listItem.setAttribute('data-name', voice.name);
                 voiceList.appendChild(listItem);
                 
             });
 
-        //    voiceList.selectedIndex = selectedIndex;
+          voiceList.selectedIndex = selectedIndex;
 }
 
 PopulateVoices();
@@ -57,9 +57,10 @@ function speakId(title) {
 }
 
 //filter the unwiped item:
-let say;
+let say = "nothing to say";
 let newArr = [];
 function ulList(arr) {
+	if(arr) {
 	let unwipedList = arr.filter(num => {
 		return num.trash == false;
 	})
@@ -73,9 +74,9 @@ function ulList(arr) {
 		if(newArr.length == unwipedList.length){
 			newArr = [];
 		}
-	 say = unwipedList[random].title;
-	 
+	say = unwipedList[random].title;
 	getHint(unwipedList[random].meaning);
+	}
 }
 
 function randomGenerator(arr) {
@@ -94,8 +95,9 @@ fill.addEventListener("keypress", handleAnswer);
 
 function handleAnswer(e) {
 	if (e.which == 13 || e.keyCode == 13) {
-		checkResult(fill.value);
-		fill.value == "";
+		let result = (fill.value).toLowerCase();
+		checkResult(result);
+		result == "";
 	}
 }
 
@@ -145,7 +147,7 @@ if(data){
     ul = JSON.parse(data); // convert a "string" object to a real object
     load(ul);   // load each of the object in ul array
 } else  {
-    ul = [];
+    ul = [1];
 }
 
 function load(array) {
@@ -155,7 +157,7 @@ function load(array) {
 }
 
 
-input.addEventListener("keyup", newTodo);
+
 
 //set up object item and push it in ul array and display function (addTodo):
 function newTodo(event) {
@@ -169,8 +171,8 @@ function newTodo(event) {
 		id: ul.length	
 	}
 
-	if(event.keyCode == 13 || event.target.attributes.id.value == "plus") {
-		const title = input.value;
+	if(event.target.attributes.id.value == "plus") {
+		const title = (input.value).toLowerCase();
 		if (title == "") {
 			input.blur();
 		} else {
@@ -184,7 +186,7 @@ function newTodo(event) {
 //display the list:
 function addTodo(obj) {
 	if (obj.trash == false) {
-	const position = "beforeend";
+	const position = "afterbegin";
 		if (!obj.done) {
 			obj.textStatus = "";
 			obj.doneStatus = "done";
