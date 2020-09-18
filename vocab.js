@@ -93,6 +93,7 @@ const btnNext = document.getElementById('btnNext');
 const status = document.getElementById('status');
 const hint = document.getElementById('hint');
 const confirm = document.getElementById('confirm');
+const form = document.querySelector('.form-control');
 
 fill.addEventListener("keypress", handleAnswer);
 
@@ -117,6 +118,7 @@ function setSuccessFor(input) {
 	const formControl = input.parentNode;
 	formControl.className = "form-control success";
 	speakId(`oh yes ${say} `)
+
 }
 
 function setErrorFor(input) {
@@ -131,6 +133,9 @@ btnNext.addEventListener("click", handleNext);
 function handleNext() {
 	if(ul.length > 1) {
 		ulList(ul);
+		form.className = "form-control";
+		fill.value= "";
+		
 	} else if (ul.length == 1){
 		location.reload();
 	} 

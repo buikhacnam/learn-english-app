@@ -34,7 +34,7 @@ a {
 	display: grid;
 	justify-content: center;
 	justify-items: center;
-	
+	padding-bottom: 10px;
 }
 
 .first button {
