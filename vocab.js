@@ -31,10 +31,9 @@ PopulateVoices();
 
 
 btnSpeak.addEventListener('click', ()=> {
-            
-            let toSpeak = new SpeechSynthesisUtterance(ulList(ul));
+            let toSpeak = new SpeechSynthesisUtterance(say);
             let selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
-            console.log(selectedVoiceName);
+       
             voices.forEach((voice)=>{
                 if(voice.name === selectedVoiceName){
                     toSpeak.voice = voice;
@@ -45,18 +44,42 @@ btnSpeak.addEventListener('click', ()=> {
 
 
 //filter the unwiped item:
+let say;
+let newArr = [];
 function ulList(arr) {
 	let unwipedList = arr.filter(num => {
 		return num.trash == false;
 	})
-
-	let random = Math.floor(Math.random() * unwipedList.length);
-	let randomItem = unwipedList[random].title;
-	return randomItem;
+	
+	let random;
+	do {
+		random = randomGenerator(unwipedList);
+	} while (newArr.includes(random));
+		newArr.push(random);
+		console.log(newArr);
+		if(newArr.length == unwipedList.length){
+			newArr = [];
+		}
+	 say = unwipedList[random].title;
+	 firstLetter = unwipedList[random].title[0];
+	 lastLetter = unwipedList[random].title[say.length - 1];
+	 let hint = `[${firstLetter}...${lastLetter}]`;
+	 console.log(lastLetter);
+	getHint(hint);
 }
+
+function randomGenerator(arr) {
+	return Math.floor(Math.random() * arr.length);
+}
+
+
 
 //input answer:
 const fill = document.getElementById('fill');
+const btnNext = document.getElementById('btnNext');
+const status = document.getElementById('status');
+const hint = document.getElementById('hint');
+
 fill.addEventListener("keypress", handleAnswer);
 
 function handleAnswer(e) {
@@ -67,12 +90,27 @@ function handleAnswer(e) {
 }
 
 function checkResult(result) {
-	if (result == "random 1") {
-		console.log("great");
+	if (result == say) {
+		status.innerText = "Correct!";
+
+	} else {
+		status.innerText = "Try again!";
 	}
 }
 
+btnNext.addEventListener("click", handleNext);
 
+function handleNext() {
+	ulList(ul);
+}
+
+function getHint(word){
+	return hint.innerText = word;
+}
+
+window.addEventListener('load', () => {
+	ulList(ul);
+});
 
 
 
