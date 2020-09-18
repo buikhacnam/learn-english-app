@@ -71,7 +71,7 @@ function ulList(arr) {
 	} while (newArr.includes(random));
 		newArr.push(random);
 		console.log(newArr);
-		if(newArr.length == unwipedList.length){
+		if(newArr.length == unwipedList.length && unwipedList.length > 1){
 			newArr = [];
 		}
 	say = unwipedList[random].title;
@@ -102,18 +102,35 @@ function handleAnswer(e) {
 }
 
 function checkResult(result) {
-	if (result == say) {
-		status.innerText = "Correct!";
+	if (result === say) {
+		setSuccessFor(fill);
 
 	} else {
-		status.innerText = "Try again!";
+		setErrorFor(fill);
 	}
 }
+
+function setSuccessFor(input) {
+	const formControl = input.parentNode;
+	formControl.className = "form-control success";
+}
+
+function setErrorFor(input) {
+	const formControl = input.parentNode;
+    formControl.className = "form-control error";
+   
+}
+
 
 btnNext.addEventListener("click", handleNext);
 
 function handleNext() {
-	ulList(ul);
+	if(ul.length > 1) {
+		ulList(ul);
+	} else if (ul.length == 1){
+		location.reload();
+	} 
+	
 }
 
 function getHint(word){
@@ -147,7 +164,7 @@ if(data){
     ul = JSON.parse(data); // convert a "string" object to a real object
     load(ul);   // load each of the object in ul array
 } else  {
-    ul = [1];
+    ul = [];
 }
 
 function load(array) {
@@ -161,6 +178,10 @@ function load(array) {
 
 //set up object item and push it in ul array and display function (addTodo):
 function newTodo(event) {
+	if (ul.length < 1) {
+		location.reload();
+	}
+
 	let meaning = input2.value;
 	
 	let li = {

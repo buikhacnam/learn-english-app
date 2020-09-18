@@ -15,37 +15,46 @@
 <body>
 	<div class="container">
         
-		<h1>Test yourself new words</h1>
-
-		<div class=showResult>		
-			<h2 id="status"></h2>
+		<h1>Learn English by listening</h1>
+		<select id='voiceList'></select> 
+				
+		
 			
-		</div>
+		<div class="form-control">
+			<i class="fas fa-volume-up" id='btnSpeak'></i>
 
-        <div class="test">	
-        	Select Voice: <select id='voiceList'></select> <br>
-        	<button id='btnNext'>Start Test</button>
-    		<input type='text' id="fill" placeholder="what did your hear?" autocomplete="on" />
-    		<button id='btnSpeak'>Speak!</button>
-    		<p id="hint"></p>
-        	
+			<input type='text' id="fill" placeholder="what did your hear?" autocomplete="on" />
+			
         </div>
+        
+        <button id='btnNext'>Next</button>
+     
+        
+        <div class="nextContainer">	
+        
+    		
+    			<p id="hint"></p>
+    		
 
-        <div class="header">
-            <h1 id="titleList" contenteditable="false">My vocab list</h1>
-            <div class="clear">
-                
-                <div><p class=date style="font-weight: 600;"></p></div>
-                <p id="clear" style="font-weight: 600;">Reset</p>
 
-            </div>
+   				
+    	</div>
+        	
+        
+
+        
+            <h3 id="titleList" contenteditable="false">My vocab list</h3>
+           
+            <p id="clear" style="font-weight: 600;">Reset</p>
+
 
             
                  
-                <input type="text" id="input" placeholder="add new vocab...">
+            <input type="text" id="input" placeholder="add new vocab...">
 
             <input type="text" id="input2" placeholder="add the meaning">
-             <i id="plus" class="fa fa-plus-circle"></i>
+             
+            <i id="plus" class="fa fa-plus-circle"></i>
             
         </div>
         <div class="content">
