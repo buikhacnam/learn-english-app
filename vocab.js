@@ -30,8 +30,10 @@ function PopulateVoices(){
 PopulateVoices();
 
 
-btnSpeak.addEventListener('click', ()=> {
-            let toSpeak = new SpeechSynthesisUtterance(say);
+btnSpeak.addEventListener('click', speakNow);
+
+function speakNow() {
+	let toSpeak = new SpeechSynthesisUtterance(say);
             let selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
        
             voices.forEach((voice)=>{
@@ -40,8 +42,19 @@ btnSpeak.addEventListener('click', ()=> {
                 }
             });
             synth.speak(toSpeak);
-});
+}
 
+function speakId(title) {
+	let toSpeak = new SpeechSynthesisUtterance(title);
+            let selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
+       
+            voices.forEach((voice)=>{
+                if(voice.name === selectedVoiceName){
+                    toSpeak.voice = voice;
+                }
+            });
+            synth.speak(toSpeak);
+}
 
 //filter the unwiped item:
 let say;
@@ -182,7 +195,7 @@ function addTodo(obj) {
 		}
 	const item = ` <li class="item">
                      <p class="text ${obj.textStatus}">${obj.title}</p>
-                     <p class="${obj.doneStatus}"><i class="fas fa-check-circle" job="complete" id="${obj.id}"></i></p>
+                     <p class="${obj.doneStatus}"><i class="fas fa-volume-up" job="complete" id="${obj.id}"></i></p>
                      <i class="fas fa-trash-alt erase ${obj.eraseStatus}" job="delete" id="${obj.id}"></i>  
                 </li>`;
 		list.insertAdjacentHTML(position, item);
@@ -209,11 +222,8 @@ list.addEventListener("click", function(event)  {
 // toggle classes of the item when it's done or deleted & update the local storage:
 
 function completeTodo(element) {
-    element.parentNode.parentNode.querySelector(".text").classList.toggle("text-complete");
-	element.parentNode.classList.toggle("after-done");
-	element.parentNode.parentNode.querySelector(".erase").classList.toggle("after-erase");
-	
-	ul[parseInt(element.attributes.id.value)].done = !ul[parseInt(element.attributes.id.value)].done;
+    let title = ul[parseInt(element.attributes.id.value)].title
+    speakId(title);
 }
 
 function deleteTodo(element) {
