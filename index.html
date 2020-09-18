@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8' />
+	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel='stylesheet' href='vocab.css' />
+	<title> My Vocab List </title>
+	<script src="https://kit.fontawesome.com/4b0dbe2632.js" crossorigin="anonymous"></script>
+
+	
+	
+</head>
+
+<body>
+	<div class="container">
+        
+		<h1>Test yourself new words</h1>
+        <div class="test">	
+        	Select Voice: <select id='voiceList'></select> <br>
+    		<input type='text' id="fill" placeholder="what did your hear?" autocomplete="on" />
+    		<button id='btnSpeak'>Speak!</button>
+        	
+        </div>
+
+        <div class="header">
+            <h1 id="titleList" contenteditable="false">My vocab list</h1>
+            <div class="clear">
+                
+                <div><p class=date style="font-weight: 600;"></p></div>
+                <p id="clear" style="font-weight: 600;">Reset</p>
+
+            </div>
+
+            <div class="add-to-do">
+                  <i id="plus" class="fa fa-plus-circle"></i>
+                <input type="text" id="input" placeholder="add new vocab...">
+            </div>
+            
+        </div>
+        <div class="content">
+            <ul id="list">
+               <!-- 
+                 <li class="item">
+                     <p class="text ${obj.textStatus}">${obj.title}</p>
+                     <p class="${obj.doneStatus}"><i class="fas fa-check-circle" job="complete" id="${obj.id}"></i></p>
+                     <i class="fas fa-trash-alt erase ${obj.eraseStatus}" job="delete" id="${obj.id}"></i>  
+                </li> -->
+            </ul>
+        </div>
+       
+    </div>
+
+
+    </div>
+	
+
+	<script type="text/javascript" src='vocab.js'></script>
+</body>
+</html>
