@@ -63,7 +63,7 @@ function ulList(arr) {
 	 say = unwipedList[random].title;
 	 firstLetter = unwipedList[random].title[0];
 	 lastLetter = unwipedList[random].title[say.length - 1];
-	 let hint = `[${firstLetter}...${lastLetter}]`;
+	 let hint = `[ ${firstLetter}...${lastLetter} ]`;
 	 console.log(lastLetter);
 	getHint(hint);
 }
@@ -105,7 +105,7 @@ function handleNext() {
 }
 
 function getHint(word){
-	return hint.innerText = word;
+	return hint.innerText = `Hint: ${word}`;
 }
 
 window.addEventListener('load', () => {
