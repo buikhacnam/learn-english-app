@@ -44,13 +44,7 @@ button:active {
 
 }
 
-.container {
-	display: grid;
-
-	justify-content: center;
-	justify-items: center;
-	align-items: center;
-	align-content: center;
+.superHeader {
 }
 
 .header {
@@ -58,6 +52,7 @@ button:active {
 	padding: 10px;
 	color: #61DAFB;
 	background-color: #20232A;
+
 
 }
 
@@ -153,10 +148,12 @@ button:active {
 
 
 .secondAndThird {
+	
 	display: grid;
 	justify-content: center;
 	justify-items: center;
 	padding-top: 10px;
+
 }
 
 
@@ -236,18 +233,24 @@ button:active {
 	display: grid;
 	grid-template-columns: auto auto auto;
 	justify-content: flex-end;
-	align-content: center;
-	align-items: center;
+	
 	grid-gap: 15px;
 	padding-bottom: 20px;
 	grid-row-gap:	0px;
-	font-size: 1.2em;
+	
 	margin-top: 10px;
 }
 
 .item .meaning {
 	font-size: 0.6em;
 } 
+
+.erase-transition {
+	transition-duration: 0.8s;
+	opacity: 0.3;
+	transform: translateY(-50px);
+}
+
 
 
 

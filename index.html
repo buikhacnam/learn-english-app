@@ -16,74 +16,76 @@
 
 <body>
 	
-	<div class="header">
-			<h1 style="margin-bottom: 10px;">My English notebook</h1>
-			<p class="link"><a href="#">Home</a> | <a href="#">About</a> </p>
-	</div>
-	
+	<div class = "superHeader">
+		<div class="header">
+				<h1 style="margin-bottom: 10px;">My English notebook</h1>
+				<p class="link"><a href="#">Home</a> | <a href="#">About</a> </p>
+		</div>
+		
 
-    <div class="first">
-			
-			
-			<select id='voiceList' style="margin-bottom: 10px; outline: none; border: none;"></select> 
-
-			<h3 style="text-align:center; color:#61DAFB;">Test yourself now:</h3>
-						
-			<div class="form-control">
-				<button id='btnSpeak'>Listen</button>
-
-				<input type='text' id="fill" placeholder="what did your hear?" autocomplete="on" />
-
-				<button id="submit">Submit</button>
+	    <div class="first">
 				
-	        </div>
-	      
+				
+				<select id='voiceList' style="margin-bottom: 10px; outline: none; border: none;"></select> 
 
-	        <p id="hint" style="margin-top: 10px; margin-bottom:10px"><span id="confirm"></span></p>
-	        <button id='btnNext'>Next</button>
-	     
-	 </div> 
+				<h3 style="text-align:center; color:#61DAFB;">Test yourself now:</h3>
+							
+				<div class="form-control">
+					<button id='btnSpeak'>Listen</button>
 
-	 <div class="secondAndThird">
-	 <div class="second">  
-	        	
-	        <div class=addToList>
+					<input type='text' id="fill" placeholder="what did your hear?" autocomplete="on" />
 
-	        
-	            <h2 id="titleList" contenteditable="false">My new words list</h2>
-	           
-	            <p id="clear" style="font-size: 0.6em; " >Reset</p>
+					<button id="submit">Submit</button>
+					
+		        </div>
+		      
 
-	        </div>
-	            
-	        <div class="inputWrap">     
-		            <input type="text" id="input" placeholder="add new words">
-
-		            <button id="plus" >Add</button>
-
-		            <input type="text" id="input2" placeholder="(optional) nghĩa tiếng Việt">
-	       	</div>
-	             
-	        
-	        
-	            
+		        <p id="hint" style="margin-top: 10px; margin-bottom:10px"><span id="confirm"></span></p>
+		        <button id='btnNext'>Next</button>
+		     
+		 </div> 
 	</div>
 
-	<div class="third">
+	<div class="secondAndThird">
+		 <div class="second">  
+		        	
+		        <div class=addToList>
 
-	        <div class="content">
-	            <ul id="list">
-	               <!--<li class="item">
-	                     <p class="text ${obj.textStatus}">How are you doing</p>
-	                     <p class="${obj.doneStatus}"><i class="fas fa-volume-up" job="complete" id="${obj.id}"></i></p>
-	                     <i class="fas fa-trash-alt erase ${obj.eraseStatus}" job="delete" id="${obj.id}"></i>  
-	                     <p>Anh khỏe chứ ?</p>
-	               	</li>` -->
-	            </ul>
-	        </div>
+		        
+		            <h2 id="titleList" contenteditable="false">My new words list</h2>
+		           
+		            <p id="clear" style="font-size: 0.6em; " >Reset</p>
 
+		        </div>
+		            
+		        <div class="inputWrap">     
+			            <input type="text" id="input" placeholder="add new words">
+
+			            <button id="plus" >Add</button>
+
+			            <input type="text" id="input2" placeholder="(optional) nghĩa tiếng Việt">
+		       	</div>
+		             
+		        
+		        
+		            
+		</div>
+
+		<div class="third">
+
+		        <div class="content">
+		            <ul id="list">
+		               <!--<li class="item">
+		                     <p class="text ${obj.textStatus}">How are you doing</p>
+		                     <p class="${obj.doneStatus}"><i class="fas fa-volume-up" job="complete" id="${obj.id}"></i></p>
+		                     <i class="fas fa-trash-alt erase ${obj.eraseStatus}" job="delete" id="${obj.id}"></i>  
+		                     <p>Anh khỏe chứ ?</p>
+		               	</li>` -->
+		            </ul>
+		        </div>
+
+		</div>
 	</div>
-````</div>
 </body>
 	
 
