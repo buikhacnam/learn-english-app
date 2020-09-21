@@ -45,6 +45,9 @@ button:active {
 }
 
 .superHeader {
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
 
 .header {
@@ -148,7 +151,7 @@ button:active {
 
 
 .secondAndThird {
-	
+	margin-top: 310px;
 	display: grid;
 	justify-content: center;
 	justify-items: center;
