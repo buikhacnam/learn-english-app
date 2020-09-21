@@ -44,19 +44,23 @@ button:active {
 
 }
 
-...superHeader {
+
+
+.header {
 	position: fixed;
 	top: 0;
 	width: 100%;
-}
-
-.header {
 	text-align: center;
 	padding: 10px;
 	color: #61DAFB;
 	background-color: #20232A;
 
 
+}
+
+
+.contentWrapper {
+	margin-top: 95px;
 }
 
 .first {
