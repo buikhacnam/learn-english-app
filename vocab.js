@@ -101,7 +101,7 @@ submit.addEventListener("click", handleAnswer)
 
 function handleAnswer(e) {
 	if (e.which == 13 || e.keyCode == 13 || event.target.attributes.id.value == "submit") {
-		let result = (fill.value).toLowerCase();
+		let result = fill.value.trim().toLowerCase();
 		checkResult(result);
 		result == "";
 	}
@@ -149,6 +149,8 @@ function getHint(word){
 }
 
 window.addEventListener('load', () => {
+	
+
 	ulList(ul);
 });
 
@@ -168,8 +170,34 @@ const plus = document.getElementById("plus");
 //submitting a new item by clicking the plus icon:
 plus.addEventListener("click", newTodo); 
 
+//default item
+const defaultItem = [
+	{
+		title: "good morning", 
+		meaning: "chào buổi sáng", 
+		trash: false, 
+		done: false, 
+		id: 0
+	},
+
+	{
+		title: "long time no see", 
+		meaning: "lâu rồi không gặp anh", 
+		trash: false, 
+		done: false, 
+		id: 1
+	},
+
+	{
+		title: "software developer", 
+		meaning: "kĩ sư công nghệ", 
+		trash: false, 
+		done: false, 
+		id: 2
+	}
+]
 // this ul array contains all the items on the list:
-let ul;
+let ul = [];
 
 //get data from the key "main" from localstorage: 
 let data = localStorage.getItem("main");
@@ -178,7 +206,7 @@ if(data){
     ul = JSON.parse(data); // convert a "string" object to a real object
     load(ul);   // load each of the object in ul array
 } else  {
-    ul = [];
+    ul = defaultItem;
 }
 
 function load(array) {
@@ -207,7 +235,7 @@ function newTodo(event) {
 	}
 
 	if(event.target.attributes.id.value == "plus") {
-		const title = (input.value).toLowerCase();
+		const title = input.value.trim().toLowerCase();
 		if (title == "") {
 			input.blur();
 		} else {
@@ -281,7 +309,8 @@ clear.addEventListener("click", reset);
 
 function reset() {
 	window.localStorage.removeItem("main");
-	window.localStorage.removeItem("titleList");
+	 ul = defaultItem;
+	localStorage.setItem("main", JSON.stringify(ul));
 	location.reload();
 }
 
