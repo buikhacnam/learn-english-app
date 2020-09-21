@@ -143,7 +143,7 @@ function handleNext() {
 }
 
 function getHint(word){
-	return hint.innerText = `"${word}"`;
+	return hint.innerText = `Vietnamese: "${word}"`;
 }
 
 window.addEventListener('load', () => {

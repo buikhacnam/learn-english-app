@@ -2,6 +2,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	transition: 0.3s;
 	
 
 }
@@ -16,9 +17,31 @@ body {
   
 }
 
+i {
+	color: #61DAFB;
+}
+
+i:hover {
+	transform: scale(1.2);
+	cursor: pointer;
+}
+
 a {
-	color: #333;
+	color: #FFFFFF;
 	text-decoration: none;
+}
+
+a:hover {
+	color: #61DAFB ;
+}
+
+button {
+	font-weight: 600;
+}
+
+button:active {
+	transform: scale(.9);
+
 }
 
 .container {
@@ -30,38 +53,84 @@ a {
 	align-content: center;
 }
 
+.header {
+	text-align: center;
+	padding: 10px;
+	color: #61DAFB;
+	background-color: #20232A;
+
+}
+
 .first {
+	color: #ffffff;
 	display: grid;
 	justify-content: center;
 	justify-items: center;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
+	background-color: #282C34;
+
 }
 
-.first button {
-	padding: 10px 40px;
+.first #voiceList {
+	padding-top: 10px;
+}
+
+.first select {
+	border: none;
+	background-color: #282C34;
+	color: #ffffff;
+}
+
+.first .form-control button {
+	margin-top: 8px;
+	padding: 13px 0;
 	border-radius: 5px;
 	border: none;
+	background-color: #61DAFB;
+	color: #282C34;
+	border: none;
+	outline: none;
 }
 
+.first .form-control button:hover {
+	background-color: #ffffff;
+	cursor: pointer;
+}
+
+
+.first button {
+	padding: 10px 60px;
+	background-color: #61DAFB;
+	color: #282C34;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+}
+
+.first button:hover {
+	background-color: #ffffff;
+	cursor: pointer;
+}
+
+#btn {
+
+}
 
 .form-control {
 	display: grid;
-	grid-template-columns: 1fr 3fr;
-	align-items: center;
-	align-content: center;
+	grid-template-columns: 1fr 1fr 1fr;
+	
+	grid-gap: 10px;
+	margin-top: 8px;
 	
 }
 
-.form-control i {
-	
-	font-size: 2.5em;
-}
+
 
 .form-control input {
-	border: 3px solid #f0f0f0;
-	border-radius: 4px;
+	border: 5px solid #f0f0f0;
+	border-radius: 5px;
 	display: block;
-	font-size: 14px;
 	padding: 10px 10px 10px 10px;
 
 	font-family: inherit;
@@ -83,6 +152,14 @@ a {
 }
 
 
+.secondAndThird {
+	display: grid;
+	justify-content: center;
+	justify-items: center;
+	padding-top: 10px;
+}
+
+
 .second {
 	display: grid;
 	justify-content: center;
@@ -93,32 +170,61 @@ a {
 	display: grid;
 	justify-content: center;
 	justify-items: center;
-	
-	border-top: 1px dashed black;
-	
 }
 
-.addToList button {
-	width: 100%;
-	padding: 5px;
-	border-radius: 3px;
+.addToList p:hover {
+	color: red;
+	cursor: pointer;
 }
 
 .inputWrap {
 	display: grid;
-	grid-template-rows: 1fr 1fr;
 	grid-gap: 5px;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	margin-bottom: 10px;
 	margin-top: 10px;
+	grid-template-areas: "input   input  input  plus"
+					"input2 input2 input2 plus";
 }
+
+#input {
+	grid-area: input;
+}
+
+#input2 {
+	grid-area: input2;
+}
+
+#plus {
+	grid-area: plus;
+}
+
 
 
 .inputWrap input {
 	padding: 5px 20px 5px 20px;
 	text-align: center;
+	outline-color: #61DAFB;
+
+}
+
+.inputWrap button {
+	background-color: #61DAFB;
+	color: #282C34;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+
+.inputWrap button:hover {
+	cursor: pointer;
 }
 
 
+.third {
+	display: grid;
+}
 
 
 .content {

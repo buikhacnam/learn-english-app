@@ -15,16 +15,26 @@
 </head>
 
 <body>
-	<div class="container">
-        <div class="first">
+	
+	<div class="header">
+			<h1 style="margin-bottom: 10px;">My English notebook</h1>
+			<p class="link"><a href="#">Home</a> | <a href="#">About</a> </p>
+	</div>
+	
+
+    <div class="first">
 			
-			<h1 style="margin-bottom: 10px;">Learn English<br> by listening</h1>
+			
 			<select id='voiceList' style="margin-bottom: 10px; outline: none; border: none;"></select> 
+
+			<h3 style="text-align:center; color:#61DAFB;">Test yourself now:</h3>
 						
 			<div class="form-control">
-				<i class="fas fa-volume-up" id='btnSpeak'></i>
+				<button id='btnSpeak'>Listen</button>
 
 				<input type='text' id="fill" placeholder="what did your hear?" autocomplete="on" />
+
+				<button id="submit">Submit</button>
 				
 	        </div>
 	      
@@ -32,29 +42,34 @@
 	        <p id="hint" style="margin-top: 10px; margin-bottom:10px"><span id="confirm"></span></p>
 	        <button id='btnNext'>Next</button>
 	     
-	    </div> 
+	 </div> 
 
-	    <div class="second">  
+	 <div class="secondAndThird">
+	 <div class="second">  
 	        	
 	        <div class=addToList>
 
 	        
-	            <h2 id="titleList" contenteditable="false">My vocab list</h2>
+	            <h2 id="titleList" contenteditable="false">My new words list</h2>
 	           
-	            <p id="clear" style="font-size: 0.6em; margin-top: 5px;">Reset</p>
+	            <p id="clear" style="font-size: 0.6em; " >Reset</p>
 
 	        </div>
 	            
 	        <div class="inputWrap">     
-		            <input type="text" id="input" placeholder="add new vocab">
+		            <input type="text" id="input" placeholder="add new words">
 
-		            <input type="text" id="input2" placeholder="add the meaning">
+		            <button id="plus" >Add</button>
+
+		            <input type="text" id="input2" placeholder="(optional) nghĩa tiếng Việt">
 	       	</div>
 	             
 	        
-	        <button id="plus" >Add to list</button>
-	            
 	        
+	            
+	</div>
+
+	<div class="third">
 
 	        <div class="content">
 	            <ul id="list">
@@ -67,10 +82,13 @@
 	            </ul>
 	        </div>
 
-	    </div>
+	</div>
+````</div>
+</body>
+	
 
     	
-    </div>
+   
 
 
 	
