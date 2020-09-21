@@ -151,7 +151,7 @@ button:active {
 
 
 .secondAndThird {
-	margin-top: 310px;
+	margin-top: 446px;
 	display: grid;
 	justify-content: center;
 	justify-items: center;
@@ -163,6 +163,7 @@ button:active {
 .second {
 	display: grid;
 	justify-content: center;
+	background-color: white;
 	
 }
 
