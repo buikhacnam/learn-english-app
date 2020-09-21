@@ -55,8 +55,6 @@ button:active {
 	padding: 10px;
 	color: #61DAFB;
 	background-color: #20232A;
-
-
 }
 
 
@@ -182,6 +180,7 @@ button:active {
 .addToList p:hover {
 	color: red;
 	cursor: pointer;
+	transform: scale(1.5);
 }
 
 .inputWrap {
@@ -265,6 +264,20 @@ button:active {
 }
 
 
+.footer {
+	
+	padding: 15px;
+	text-align: center;
+	color: #61DAFB;
+	background-color: #20232A;
+}
 
 
+.footer i{
+	color: red;
+}
 
+.footer a{
+	text-decoration: none;
+	color: #61DAFB;
+}
