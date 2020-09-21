@@ -94,11 +94,13 @@ const status = document.getElementById('status');
 const hint = document.getElementById('hint');
 const confirm = document.getElementById('confirm');
 const form = document.querySelector('.form-control');
+const submit = document.getElementById("submit");
 
 fill.addEventListener("keypress", handleAnswer);
+submit.addEventListener("click", handleAnswer)
 
 function handleAnswer(e) {
-	if (e.which == 13 || e.keyCode == 13) {
+	if (e.which == 13 || e.keyCode == 13 || event.target.attributes.id.value == "submit") {
 		let result = (fill.value).toLowerCase();
 		checkResult(result);
 		result == "";
@@ -159,6 +161,9 @@ const list = document.getElementById("list");
 const input = document.getElementById("input");
 const input2 = document.getElementById("input2");
 const plus = document.getElementById("plus");
+
+
+
 
 //submitting a new item by clicking the plus icon:
 plus.addEventListener("click", newTodo); 
