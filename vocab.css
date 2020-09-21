@@ -37,6 +37,7 @@ a:hover {
 
 button {
 	font-weight: 600;
+	font-family: 'Grandstander', cursive;
 }
 
 button:active {
@@ -168,6 +169,7 @@ button:active {
 	display: grid;
 	justify-content: center;
 	background-color: white;
+	padding-top: 10px;
 	
 }
 
@@ -211,6 +213,7 @@ button:active {
 	padding: 5px 20px 5px 20px;
 	text-align: center;
 	outline-color: #61DAFB;
+	font-family: 'Grandstander', cursive;
 
 }
 
@@ -224,6 +227,7 @@ button:active {
 
 .inputWrap button:hover {
 	cursor: pointer;
+	transform: scale(0.9);
 }
 
 
