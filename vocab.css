@@ -89,6 +89,8 @@ button:active {
 	border: none;
 	background-color: #282C34;
 	color: #ffffff;
+	font-size: 0.8em;
+	font-family: inherit;
 }
 
 .first .form-control button {
@@ -214,10 +216,11 @@ button:active {
 
 
 .inputWrap input {
-	padding: 6px 20px 6px 20px;
+	padding: 6px 25px 6px 25px;
 	text-align: center;
 	outline-color: #61DAFB;
 	font-family: inherit;
+	font-size: 0.9em;
 
 
 }
