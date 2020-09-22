@@ -218,7 +218,7 @@ function load(array) {
 
 //set up object item and push it in ul array and display function:
 function newWord(event) {
-	ulList(ul);
+	
 
 	let meaning = input2.value;
 	
@@ -238,6 +238,7 @@ function newWord(event) {
 			li.title = title;
 			ul.push(li);
 			addWord(li);
+			ulList(ul);
 		}	
 	}	
 }
