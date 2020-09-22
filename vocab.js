@@ -166,7 +166,7 @@ const plus = document.getElementById("plus");
 
 
 //submitting a new item by clicking the plus icon:
-plus.addEventListener("click", newTodo); 
+plus.addEventListener("click", newWord); 
 
 //default item
 const defaultItem = [
@@ -209,7 +209,7 @@ if(data){
 
 function load(array) {
 	array.forEach(obj => {
-		addTodo(obj);
+		addWord(obj);
 	})
 }
 
@@ -217,7 +217,7 @@ function load(array) {
 
 
 //set up object item and push it in ul array and display function (addTodo):
-function newTodo(event) {
+function newWord(event) {
 	ulList(ul);
 
 	let meaning = input2.value;
@@ -237,28 +237,20 @@ function newTodo(event) {
 		} else {
 			li.title = title;
 			ul.push(li);
-			addTodo(li);
+			addWord(li);
 		}	
 	}	
 }
 
 //display the list:
-function addTodo(obj) {
+function addWord(obj) {
 	if (obj.trash == false) {
 	const position = "afterbegin";
-		if (!obj.done) {
-			obj.textStatus = "";
-			obj.doneStatus = "done";
-			obj.eraseStatus = "";
-		} else {
-			obj.textStatus = "text-complete";
-			obj.doneStatus = "after-done";
-			obj.eraseStatus = "after-erase";
-		}
+	
 	const item = ` <li class="item">
-                     <p class="text ${obj.textStatus}">${obj.title}</p>
-                     <p class="${obj.doneStatus}"><i class="fas fa-volume-up" job="complete" id="${obj.id}"></i></p>
-                     <i class="fas fa-trash-alt erase ${obj.eraseStatus}" job="delete" id="${obj.id}"></i>  
+                     <p class="text">${obj.title}</p>
+                     <p class="done"><i class="fas fa-volume-up" job="speak" id="${obj.id}"></i></p>
+                     <i class="fas fa-trash-alt erase" job="delete" id="${obj.id}"></i>  
                      <p class="meaning">${obj.meaning}</p>
                		</li>`;
 		list.insertAdjacentHTML(position, item);
@@ -275,22 +267,22 @@ list.addEventListener("click", function(event)  {
 	const element = event.target;
 	const deleteOrComplete = element.attributes.job.value;
 
-	if(deleteOrComplete == "complete"){
-		completeTodo(element);
+	if(deleteOrComplete == "speak"){
+		speakWord(element);
 	} else if (deleteOrComplete == "delete"){
-		deleteTodo(element);
+		deleteWord(element);
 	}
 	localStorage.setItem("main", JSON.stringify(ul));
 })
 
-// toggle classes of the item when it's done or deleted & update the local storage:
+// toggle classes of the item when it's deleted or choose element to speak :
 
-function completeTodo(element) {
-    let title = ul[parseInt(element.attributes.id.value)].title
+function speakWord(element) {
+    let title = ul[parseInt(element.attributes.id.value)].title;
     speakId(title);
 }
 
-function deleteTodo(element) {
+function deleteWord(element) {
 	element.parentNode.classList.toggle("erase-transition");
 	
 	ul[parseInt(element.attributes.id.value)].trash = true;
@@ -310,5 +302,5 @@ function reset() {
 	location.reload();
 }
 
-///////////////////////////////////////////////////////////////////////////
+
 
