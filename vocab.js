@@ -238,7 +238,7 @@ function newWord(event) {
 			li.title = title;
 			ul.push(li);
 			addWord(li);
-			ulList(ul);
+			
 		}	
 	}	
 }
@@ -282,14 +282,14 @@ function speakWord(element) {
     let title = ul[parseInt(element.attributes.id.value)].title;
     speakId(title);
 
-    ulList(ul);
+    //ulList(ul);
 }
 
 function deleteWord(element) {
 	element.parentNode.classList.toggle("erase-transition");
 	ul[parseInt(element.attributes.id.value)].trash = true;
 
-	ulList(ul);
+	//ulList(ul);
 	
 	setTimeout(() => {
 		element.parentNode.parentNode.removeChild(element.parentNode);
