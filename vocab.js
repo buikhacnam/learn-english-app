@@ -61,25 +61,29 @@ function speakId(title) {
 //filter the unwiped item:
 let say = "nothing to say";
 let newArr = [];
+let unwipedList;
 function ulList(arr) {
-	if(arr) {
-	let unwipedList = arr.filter(num => {
+		 unwipedList = arr.filter(num => {
 		return num.trash == false;
 	})
 	
-	let random;
-	do {
-		random = randomGenerator(unwipedList);
-	} while (newArr.includes(random));
-		newArr.push(random);
-		console.log(newArr);
-		if(newArr.length == unwipedList.length && unwipedList.length > 1){
-			newArr = [];
-		}
-	say = unwipedList[random].title;
-	getHint(unwipedList[random].meaning);
+	if (unwipedList.length > 0) {
+		let random;
+		do {
+			random = randomGenerator(unwipedList);
+		} while (newArr.includes(random));
+			newArr.push(random);
+			console.log(newArr);
+			if(newArr.length == unwipedList.length || unwipedList.length == 1){
+				newArr = [];
+			}
+		say = unwipedList[random].title;
+		getHint(unwipedList[random].meaning);
+	} else if (unwipedList.length == 0) {
+		//location.reload();
 	}
 }
+
 
 function randomGenerator(arr) {
 	return Math.floor(Math.random() * arr.length);
@@ -132,16 +136,10 @@ function setErrorFor(input) {
 
 btnNext.addEventListener("click", handleNext);
 
-function handleNext() {
-	if(ul.length > 1) {
+function handleNext() {	
 		ulList(ul);
 		form.className = "form-control";
-		fill.value= "";
-		
-	} else if (ul.length == 1){
-		location.reload();
-	} 
-	
+		fill.value= "";		
 }
 
 function getHint(word){
@@ -220,9 +218,7 @@ function load(array) {
 
 //set up object item and push it in ul array and display function (addTodo):
 function newTodo(event) {
-	if (ul.length < 1) {
-		location.reload();
-	}
+	ulList(ul);
 
 	let meaning = input2.value;
 	
