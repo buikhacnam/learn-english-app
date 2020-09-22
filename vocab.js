@@ -171,24 +171,25 @@ plus.addEventListener("click", newWord);
 //default item
 const defaultItem = [
 	{
-		title: "good morning", 
-		meaning: "chào buổi sáng", 
+		title: "long time no see", 
+		meaning: "lâu rồi không gặp anh", 
 		trash: false, 
 		done: false, 
 		id: 0
 	},
 
 	{
-		title: "long time no see", 
-		meaning: "lâu rồi không gặp anh", 
+		title: "software developer", 
+		meaning: "kĩ sư phần mềm", 
 		trash: false, 
 		done: false, 
 		id: 1
 	},
 
 	{
-		title: "software developer", 
-		meaning: "kĩ sư phần mềm", 
+		
+		title: "good morning", 
+		meaning: "", 
 		trash: false, 
 		done: false, 
 		id: 2
