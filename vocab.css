@@ -13,9 +13,9 @@ body {
 	position: relative;
 	min-height: 100vh;
 	color: black;
-    
-  
 }
+
+
 
 i {
 	color: #61DAFB;
@@ -60,6 +60,7 @@ button:active {
 
 .contentWrapper {
 	margin-top: 95px;
+	padding-bottom: 50px;
 }
 
 .first {
@@ -263,7 +264,8 @@ button:active {
 	bottom: 0;
 	position: absolute;
 	width: 100%;
-	padding: 15px;
+	height: 50px;
+	padding: 20px;
 	text-align: center;
 	color: #ffffff;
 	background-color: #20232A;
