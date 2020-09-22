@@ -57,6 +57,15 @@ button:active {
 	background-color: #20232A;
 }
 
+.nav_links {
+	list-style: none;
+}
+
+.nav_links li {
+	display: inline-block;
+	padding: 0 15px;
+	font-size: 0.7em;
+}
 
 .contentWrapper {
 	margin-top: 95px;
@@ -279,4 +288,11 @@ button:active {
 .footer a{
 	text-decoration: none;
 	color: #61DAFB;
+}
+
+@media screen and (max-width:334px){
+	.contentWrapper {
+		margin-top: 80px;
+	
+	}
 }
