@@ -59,30 +59,30 @@ function speakId(title) {
 
 
 //filter the unwiped item:
-let say = "nothing to say";
+let say = "your list is empty";
 let newArr = [];
 let unwipedList;
 function ulList(arr) {
 		 unwipedList = arr.filter(num => {
 		return num.trash == false;
 	})
-	
+	let random;
 	if (unwipedList.length > 0) {
-		let random;
 		do {
 			random = randomGenerator(unwipedList);
 		} while (newArr.includes(random));
 			newArr.push(random);
-			console.log(newArr);
 			if(newArr.length == unwipedList.length || unwipedList.length == 1){
 				newArr = [];
 			}
 		say = unwipedList[random].title;
 		getHint(unwipedList[random].meaning);
-	} else if (unwipedList.length == 0) {
-		//location.reload();
+	} else {
+		say = "your list is empty"
+		getHint("Add new words to the list below");
 	}
-}
+	
+}	
 
 
 function randomGenerator(arr) {
@@ -106,8 +106,10 @@ submit.addEventListener("click", handleAnswer)
 function handleAnswer(e) {
 	if (e.which == 13 || e.keyCode == 13 || event.target.attributes.id.value == "submit") {
 		let result = fill.value.trim().toLowerCase();
-		checkResult(result);
-		result == "";
+		if (unwipedList.length > 0) {
+			checkResult(result);
+			result == "";
+		}
 	}
 }
 
@@ -143,12 +145,10 @@ function handleNext() {
 }
 
 function getHint(word){
-	return hint.innerText = `Vietnamese: "${word}"`;
+		return hint.innerText = `"${word}"`;
 }
 
 window.addEventListener('load', () => {
-	
-
 	ulList(ul);
 });
 
@@ -216,7 +216,7 @@ function load(array) {
 
 
 
-//set up object item and push it in ul array and display function (addTodo):
+//set up object item and push it in ul array and display function:
 function newWord(event) {
 	ulList(ul);
 
@@ -249,7 +249,7 @@ function addWord(obj) {
 	
 	const item = ` <li class="item">
                      <p class="text">${obj.title}</p>
-                     <p class="done"><i class="fas fa-volume-up" job="speak" id="${obj.id}"></i></p>
+                     <p class="speak"><i class="fas fa-volume-up" job="speak" id="${obj.id}"></i></p>
                      <i class="fas fa-trash-alt erase" job="delete" id="${obj.id}"></i>  
                      <p class="meaning">${obj.meaning}</p>
                		</li>`;
@@ -262,7 +262,7 @@ function addWord(obj) {
 	}
 }
 
-// when you click on "done" or "trash" icon:
+// when you click on "speak" or "trash" icon:
 list.addEventListener("click", function(event)  {
 	const element = event.target;
 	const deleteOrComplete = element.attributes.job.value;
@@ -280,12 +280,15 @@ list.addEventListener("click", function(event)  {
 function speakWord(element) {
     let title = ul[parseInt(element.attributes.id.value)].title;
     speakId(title);
+
+    ulList(ul);
 }
 
 function deleteWord(element) {
 	element.parentNode.classList.toggle("erase-transition");
-	
 	ul[parseInt(element.attributes.id.value)].trash = true;
+
+	ulList(ul);
 	
 	setTimeout(() => {
 		element.parentNode.parentNode.removeChild(element.parentNode);

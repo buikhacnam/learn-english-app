@@ -120,22 +120,18 @@ button:active {
 .form-control {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	
 	grid-gap: 10px;
 	margin-top: 8px;
-	
 }
 
 
 
 .form-control input {
-	border: 5px solid #f0f0f0;
+	border: 3px solid #f0f0f0;
 	border-radius: 5px;
 	display: block;
 	padding: 10px 10px 10px 10px;
-
 	font-family: inherit;
-	
 	text-align: center;
 }
 
@@ -212,7 +208,7 @@ button:active {
 	padding: 6px 20px 6px 20px;
 	text-align: center;
 	outline-color: #61DAFB;
-	font-family: 'Grandstander', cursive;
+	font-family: inherit;
 
 
 }
