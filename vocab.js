@@ -188,7 +188,7 @@ const defaultItem = [
 
 	{
 		title: "software developer", 
-		meaning: "kĩ sư công nghệ", 
+		meaning: "kĩ sư phần mềm", 
 		trash: false, 
 		done: false, 
 		id: 2
