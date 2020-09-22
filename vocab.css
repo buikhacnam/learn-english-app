@@ -290,9 +290,20 @@ button:active {
 	color: #61DAFB;
 }
 
-@media screen and (max-width:334px){
-	.contentWrapper {
-		margin-top: 80px;
+@media screen and (max-width:338px){
+	.header {
+	position: relative;
 	
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	color: #61DAFB;
+	background-color: #20232A;
 	}
+	.contentWrapper {
+	margin-top: 0px;
+	padding-bottom: 50px;
+}
+
+
 }
