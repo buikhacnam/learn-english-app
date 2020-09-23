@@ -202,8 +202,9 @@ if(data){
     ul = JSON.parse(data); // convert a "string" object to a real object
     load(ul);   // load each of the object in ul array
 } else  {
-    reset();
     console.log("reset");
+    reset();
+
 }
 
 function load(array) {
@@ -298,10 +299,12 @@ function deleteWord(element) {
 clear.addEventListener("click", reset);
 
 function reset() {
+	
 	window.localStorage.removeItem("main");
 	ul = defaultItem;
 	localStorage.setItem("main", JSON.stringify(ul));
 	location.reload();
+	console.log("reset");
 }
 
 
