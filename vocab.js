@@ -174,7 +174,6 @@ const defaultItem = [
 		title: "long time no see", 
 		meaning: "lâu rồi không gặp anh", 
 		trash: false, 
-		done: false, 
 		id: 0
 	},
 
@@ -182,7 +181,6 @@ const defaultItem = [
 		title: "software developer", 
 		meaning: "kĩ sư phần mềm", 
 		trash: false, 
-		done: false, 
 		id: 1
 	},
 
@@ -190,8 +188,7 @@ const defaultItem = [
 		
 		title: "good morning", 
 		meaning: "", 
-		trash: false, 
-		done: false, 
+		trash: false,  
 		id: 2
 	}
 ]
@@ -227,7 +224,6 @@ function newWord(event) {
 		title: "",
 		meaning: meaning,
 		trash: false,
-		done: false,
 		id: ul.length	
 	}
 
