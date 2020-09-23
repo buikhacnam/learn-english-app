@@ -9,109 +9,98 @@
 	<script src="https://kit.fontawesome.com/4b0dbe2632.js" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@700&display=swap" rel="stylesheet">
-
-	
 	
 </head>
 
 <body>
 	
 	
-<div class="header">
-				<h1 style="margin-bottom: 10px;">My English Notebook</h1>
-			
-				<nav>
-					<ul class="nav_links">
-							<li class="link"><a href="https://buikhacnam.github.io/english/">Home</a></li> 
-							<li class="link"><a href="https://buikhacnam.github.io/english/phone.html">Cài Đặt Smartphone</a></li>
-							<li class="link"><a href="https://buikhacnam.github.io/english/about.html">About</a></li>
-					</ul>
-				</nav>
+	<div class="header">
+		<h1 style="margin-bottom: 10px;">My English Notebook</h1>
 				
-</div>
-		
-<div class="contentWrapper">
-	    <div class="first">
-				
-				
-				<select id='voiceList' style="margin-bottom: 10px; outline: none; border: none;"></select> 
-
-				<h3 style="text-align:center; color:#61DAFB;">Test Yourself Now:</h3>
-							
-				<div class="form-control">
-					<button id='btnSpeak'>Listen</button>
-
-					<input type='text' id="fill" placeholder="what did your hear?" autocomplete="on" />
-
-					<button id="submit">Submit</button>
+			<nav>
+				<ul class="nav_links">
+					<li class="link"><a href="https://buikhacnam.github.io/english/">Home</a></li> 
+					<li class="link"><a href="https://buikhacnam.github.io/english/phone.html">Cài Đặt Smartphone</a></li>
+					<li class="link"><a href="https://buikhacnam.github.io/english/about.html">About</a></li>
+				</ul>
+			</nav>
 					
-		        </div>
-		      
-
-		        <p id="hint" style="margin-top: 10px; margin-bottom:10px"><span id="confirm"></span></p>
-		        <button id='btnNext'>Next</button>
-		     
-		</div> 
-	
-
-	
-		<div class="second">  
-		        	
-		        <div class=addToList>
-
-		        
-		            <h2 id="titleList" contenteditable="false">My New Words List</h2>
-		           
-		            <p id="clear" style="font-size: 0.6em; color:red; " >Reset</p>
-
-		        </div>
-		            
-		        <div class="inputWrap">     
-			            <input type="text" id="input" placeholder="add new words">
-
-			            <button id="plus" >Add</button>
-
-			            <input type="text" id="input2" placeholder="tiếng Việt (optional)">
-		       	</div>            
-		</div>
-	
-
-		<div class="secondAndThird">
-			<div class="third">
-			        <div class="content">
-			            <ul id="list">
-			               <!--<li class="item">
-			                     <p class="text ${obj.textStatus}">How are you doing</p>
-			                     <p class="${obj.doneStatus}"><i class="fas fa-volume-up" job="complete" id="${obj.id}"></i></p>
-			                     <i class="fas fa-trash-alt erase ${obj.eraseStatus}" job="delete" id="${obj.id}"></i>  
-			                     <p>Anh khỏe chứ ?</p>
-			               	</li>` -->
-			            </ul>
-			        </div>
-	       </div>
-		</div>
-</div>
-
-<div class="footer">
-			
-	<p>
-		Made with <i class="fas fa-heart" style="color: red;"></i> by 
-		<a target="_blank" href="https://twitter.com/buikhacnam11">Bui Nam</a>	
+	</div>
 		
+	<div class="contentWrapper">
+		    
+		    <div class="first">
+					
+					<select id='voiceList' style="margin-bottom: 10px; outline: none; border: none;"></select> 
+
+					<h3 style="text-align:center; color:#61DAFB;">Test Yourself Now:</h3>
+								
+					<div class="form-control">
+						<button id='btnSpeak'>Listen</button>
+
+						<input type='text' id="fill" placeholder="what did your hear?" autocomplete="on" />
+
+						<button id="submit">Submit</button>
+						
+			        </div>
+			      
+
+			        <p id="hint" style="margin-top: 10px; margin-bottom:10px"><span id="confirm"></span></p>
+			        <button id='btnNext'>Next</button>
+			     
+			</div> 
+		
+
+		
+			<div class="second">  
+			        	
+			        <div class=addToList>
+
+			        
+			            <h2 id="titleList" contenteditable="false">My New Words List</h2>
+			           
+			            <p id="clear" style="font-size: 0.6em; color:red; " >Reset</p>
+
+			        </div>
+			            
+			        <div class="inputWrap">     
+				            <input type="text" id="input" placeholder="add new words">
+
+				            <button id="plus" >Add</button>
+
+				            <input type="text" id="input2" placeholder="tiếng Việt (optional)">
+			       	</div>            
+			</div>
+		
+
+			<div class="secondAndThird">
+				<div class="third">
+				        <div class="content">
+				            <ul id="list">
+				               <!--<li class="item">
+				                     <p class="text ${obj.textStatus}">How are you doing</p>
+				                     <p class="${obj.doneStatus}"><i class="fas fa-volume-up" job="complete" id="${obj.id}"></i></p>
+				                     <i class="fas fa-trash-alt erase ${obj.eraseStatus}" job="delete" id="${obj.id}"></i>  
+				                     <p>Anh khỏe chứ ?</p>
+				               	</li>` -->
+				            </ul>
+				        </div>
+		       </div>
+			</div>
+	</div>
+
+	<div class="footer">
 				
-	</p>
-</div>
-
-	
-</body>
-	
-
-    	
-   
-
-
-	
+		<p>
+			Made with <i class="fas fa-heart" style="color: red;"></i> by 
+			<a target="_blank" href="https://twitter.com/buikhacnam11">Bui Nam</a>	
+			
+					
+		</p>
+	</div>
 
 	<script type="text/javascript" src='vocab.js'></script>
 </body>
+
 </html>
