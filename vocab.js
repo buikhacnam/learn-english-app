@@ -5,10 +5,13 @@ const btnSpeak = document.querySelector('#btnSpeak');
 let synth = window.speechSynthesis;
 let voices = [];
 
+
 if(speechSynthesis !== undefined){
             speechSynthesis.onvoiceschanged = PopulateVoices;
 }
 
+
+//Select different voices:
 function PopulateVoices(){
             voices = synth.getVoices();
             let selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
@@ -32,6 +35,7 @@ PopulateVoices();
 
 btnSpeak.addEventListener('click', speakNow);
 
+//speak:
 function speakNow() {
 	let toSpeak = new SpeechSynthesisUtterance(say);
             let selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
@@ -55,7 +59,6 @@ function speakId(title) {
             });
             synth.speak(toSpeak);
 }
-
 
 
 //filter the unwiped item:
@@ -90,8 +93,6 @@ function randomGenerator(arr) {
 }
 
 
-
-//input answer:
 const fill = document.getElementById('fill');
 const btnNext = document.getElementById('btnNext');
 const status = document.getElementById('status');
@@ -153,7 +154,6 @@ window.addEventListener('load', () => {
 });
 
 
-
 // -----------------------List-------------------------------
 const clear = document.getElementById("clear");
 const dateElement = document.getElementById("date");
@@ -161,8 +161,6 @@ const list = document.getElementById("list");
 const input = document.getElementById("input");
 const input2 = document.getElementById("input2");
 const plus = document.getElementById("plus");
-
-
 
 
 //submitting a new item by clicking the plus icon:
@@ -202,9 +200,7 @@ if(data){
     ul = JSON.parse(data); // convert a "string" object to a real object
     load(ul);   // load each of the object in ul array
 } else  {
-    console.log("reset");
     reset();
-
 }
 
 function load(array) {
@@ -218,8 +214,6 @@ function load(array) {
 
 //set up object item and push it in ul array and display function:
 function newWord(event) {
-	
-
 	let meaning = input2.value;
 	
 	let li = {
@@ -236,8 +230,7 @@ function newWord(event) {
 		} else {
 			li.title = title;
 			ul.push(li);
-			addWord(li);
-			
+			addWord(li);			
 		}	
 	}	
 }
@@ -280,15 +273,11 @@ list.addEventListener("click", function(event)  {
 function speakWord(element) {
     let title = ul[parseInt(element.attributes.id.value)].title;
     speakId(title);
-
-    //ulList(ul);
 }
 
 function deleteWord(element) {
 	element.parentNode.classList.toggle("erase-transition");
 	ul[parseInt(element.attributes.id.value)].trash = true;
-
-	//ulList(ul);
 	
 	setTimeout(() => {
 		element.parentNode.parentNode.removeChild(element.parentNode);
@@ -299,12 +288,11 @@ function deleteWord(element) {
 clear.addEventListener("click", reset);
 
 function reset() {
-	
 	window.localStorage.removeItem("main");
+	// 3 default items:
 	ul = defaultItem;
 	localStorage.setItem("main", JSON.stringify(ul));
 	location.reload();
-	console.log("reset");
 }
 
 
