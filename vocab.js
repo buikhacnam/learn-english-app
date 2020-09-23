@@ -203,6 +203,7 @@ if(data){
     load(ul);   // load each of the object in ul array
 } else  {
     reset();
+    console.log("reset");
 }
 
 function load(array) {
