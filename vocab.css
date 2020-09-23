@@ -148,7 +148,7 @@ button:active {
 
 .form-control input:focus {
 	outline: 0;
-	border-color: #777;
+	border-color: #61DAFB;
 }
 
 .form-control.success input {
